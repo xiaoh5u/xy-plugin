@@ -1,0 +1,118 @@
+body {
+    margin    : 0;
+    padding   : 12px;
+    text-align: center;
+}
+
+.extensions header {
+    font-size       : 14px;
+    font-weight     : 600;
+    border-bottom   : 1px dashed #ddd;
+    padding-bottom  : 12px;
+    /*渐变背景，此处为能无缝拼接的渐变 即0~100%*/
+    /*linear-gradient(线性渐变)*/
+    background-image: -webkit-linear-gradient(left, #3498db, #f47920 10%, #d71345 20%, #f7acbc 30%, #ffd400 40%, #3498db 50%, #f47920 60%, #d71345 70%, #f7acbc 80%, #ffd400 90%, #3498db);
+    color           : transparent;
+    /*文字填充色为透明*/
+
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    /* background-clip 规定背景的绘制区域：*/
+    /*背景剪裁为文字，相当于用背景填充文字 CSS3新属性*/
+
+    -webkit-background-size: 200% 100%;
+    /*背景图片向水平方向扩大一倍，这样background-position才有移动与变化的空间*/
+    background-size        : 200% 100%;
+    /* 动画 */
+    -webkit-animation      : masked-animation 4s infinite linear;
+}
+
+.extensions {
+    width: 300px;
+}
+
+.extensions>ul {
+    padding: 0;
+    margin : 0;
+}
+
+.extensions li {
+    display        : flex;
+    justify-content: space-between;
+    align-items    : center;
+    height         : 20px;
+    font-size      : 14px;
+    padding        : 8px 12px;
+}
+
+
+select {
+    padding      : 4px 16px 4px 8px;
+    outline      : 0;
+    border-radius: 4px;
+    border-color : #999;
+    color        : #666;
+    appearance   : none;
+    /*在选择框的最右侧中间显示小箭头图片*/
+    background   : url("http://ourjs.github.io/static/2015/arrow.png") no-repeat scroll right center transparent;
+}
+
+
+.control {
+    background-color: rgb(189, 193, 198);
+    border-radius   : 8px;
+    height          : 12px;
+    left            : 3px;
+    position        : relative;
+    transition      : background-color linear 80ms;
+    width           : 28px;
+    z-index         : 0;
+    cursor          : pointer;
+}
+
+.control>.btn {
+    background-color: #fff;
+    border-radius   : 50%;
+    box-shadow      : 0 1px 3px 0 rgba(0, 0, 0, .4);
+    display         : block;
+    height          : 16px;
+    position        : absolute;
+    transition      : transform linear 80ms, background-color linear 80ms;
+    width           : 16px;
+    z-index         : 1;
+    top             : 50%;
+    transform       : translate(0, -50%);
+    cursor          : pointer;
+}
+
+
+
+.enable {
+    background-color: rgba(26, 115, 232, 0.5);
+}
+
+.enable .btn {
+    background-color: rgb(26, 115, 232);
+    transform       : translate(18px, -50%);
+}
+
+@keyframes masked-animation {
+    0% {
+        background-position: 0 0;
+        /*background-position 属性设置背景图像的起始位置。*/
+    }
+
+    100% {
+        background-position: -100% 0;
+    }
+}
+
+@-webkit-keyframes masked-animation {
+    0% {
+        background-position: 0 0;
+    }
+
+    100% {
+        background-position: -100% 0;
+    }
+}

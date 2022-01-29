@@ -1,0 +1,24 @@
+{
+	"manifest_version": 2,
+	"name": "鑫义科技开发者工具",
+	"version": "1.0.0",
+	"description": "鑫义科技开发插件",
+	"icons": {
+		"16": "img/favicon.png",
+		"48": "img/favicon.png",
+		"128": "img/favicon.png"
+	},
+	"browser_action": {
+		"default_icon": "img/favicon.png",
+		"default_title": "鑫义科技开发插件",
+		"default_popup": "popup.html"
+	},
+	"content_scripts": [
+		{
+			"matches": ["http://*/*", "https://*/*"],
+			"js": ["js/utils.js", "js/content.js"],
+			"run_at": "document_start"
+		}
+	],
+	"permissions": ["http://*/", "https://*/*", "tabs", "storage"]
+}
